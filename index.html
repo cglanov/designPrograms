@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DESIGN PROGRAMS // TERMINAL</title>
+  <title>DESIGN DASHBOARD // TERMINAL</title>
   <link rel="icon" type="image/png" href="favicon.png" />
 
   <!-- Retro CRT Monospace Fonts -->
@@ -16,14 +16,8 @@
 </head>
 <body>
   <main class="terminal-frame">
-    <div class="top-bar">
-      <span>SYS.NODE // GITHUB_PAGES_HOST</span>
-      <span>UPLINK: GSHEETS_DB [READ-ONLY]</span>
-    </div>
-
     <header class="banner">
-      <div class="banner-sub">*** DIRECTORY INDEX ***</div>
-      <h1>DESIGN PROGRAMS</h1>
+      <h1>DESIGN DASHBOARD</h1>
     </header>
 
     <div class="status-line" id="status-line">
@@ -31,12 +25,14 @@
     </div>
 
     <div class="error-box" id="error-box"></div>
-    <section class="program-grid" id="program-grid" aria-label="Design Programs"></section>
 
-    <footer>
-      <span>CLICK ANY MODULE TO LAUNCH IN NEW TAB</span>
-      <span id="record-count">RECORDS: --</span>
-    </footer>
+    <div class="dashboard-workspace">
+      <aside class="sidebar">
+        <section class="program-list" id="program-list" aria-label="Design Programs"></section>
+      </aside>
+      <!-- Ready for future dashboard panels/views -->
+      <section class="main-stage" id="main-stage"></section>
+    </div>
   </main>
 </body>
 </html>
