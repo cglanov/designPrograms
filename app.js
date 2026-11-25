@@ -8,8 +8,7 @@ const CONFIG = {
 const elements = {
   statusLine: document.getElementById("status-line"),
   errorBox: document.getElementById("error-box"),
-  programGrid: document.getElementById("program-grid"),
-  recordCount: document.getElementById("record-count")
+  programList: document.getElementById("program-list")
 };
 
 function setStatus(message) {
@@ -87,7 +86,6 @@ function createProgramButton(item, index) {
 function renderPrograms(programs) {
   if (programs.length === 0) {
     setStatus("STREAM COMPLETE. NO ENTRIES FOUND IN COLUMNS A & B.");
-    elements.recordCount.textContent = "RECORDS: 00";
     return;
   }
 
@@ -96,9 +94,8 @@ function renderPrograms(programs) {
     fragment.appendChild(createProgramButton(item, index));
   });
 
-  elements.programGrid.appendChild(fragment);
+  elements.programList.appendChild(fragment);
   setStatus(`READY. ${programs.length} PROGRAM(S) LOADED.`);
-  elements.recordCount.textContent = `RECORDS: ${String(programs.length).padStart(2, "0")}`;
 }
 
 async function init() {
